@@ -1,0 +1,211 @@
+ 
+  
+<button type="button" class="cancelClass" aria-label="Close" (click)="onClose()">
+  <span aria-hidden="true">x</span>
+</button>
+<form [formGroup]="reserveForm" >
+<div>
+<label>Slno:</label>
+<input type="number" placeholder="No" formControlName="Slno"><br><br>
+  
+<label>Hotel:</label>
+<select formControlName="Hotel" >
+
+  <option value="marriot">Marriot</option>
+  <option value="Aria">Arial</option> 
+  <option value="Vivanta">Vivanta</option>
+  <option value="Novotel">Novotel</option>
+</select><br><br>
+
+
+<label >Arrival:</label>
+<input type="date" formControlName="Arrival"><br><br>
+
+<label>Departure:</label>
+<input type="date" formControlName="Departure"><br><br>
+
+
+<label>Type:</label>
+<select formControlName="revType">
+  <option value="Type" ></option>
+  <option value="luxury Suit">Luxury Suit</option>
+  <option value="Suit">Suit</option>
+  <option value="Economy">Economy</option>
+  <option value="Double">Double</option>
+</select><br><br>
+
+
+<label>Guests:</label>
+<input type="number" placeholder="Guests" formControlName="Guests"><br><br>
+
+<label>Price:</label>
+<input type="number" placeholder="price i" formControlName="Price"><br><br>
+
+</div>
+<div >
+<button (click)="addList()" class="btn btn-active">Submit</button>|
+
+<button type="reset" (click)="clear()">Clear</button>
+</div>
+</form>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<button type="button" class="cancelClass" aria-label="Close" (click)="onClose()">
+  <span aria-hidden="true">x</span>
+</button>
+<form [formGroup]="reserveForm" >
+<div>
+<label>Slno:</label>
+<input type="number" placeholder="No" formControlName="Slno"><br><br>
+
+</div>
+<div class="form-control" *ngIf="!hotelbool">
+  <label>Hotel</label>
+  <input value="abc" formControlName="Hotel" type="text" placeholder="Hotel">
+</div><br>
+
+<div class="form-control" *ngIf="hotelbool">
+    <label>Hotel</label>
+    <select class="form-select form-control-sm" aria-placeholder="Type" formControlName="hotel" (change)="calculateprice()" [(ngModel)]="selectedhotel">
+      <option *ngFor="let data of masterdata" [value]="data.Hotel">{{data.Hotel}}</option>
+    </select>
+</div><br>
+
+<label >Arrival:</label>
+<input type="date" formControlName="Arrival"><br><br>
+
+<label>Departure:</label>
+<input type="date" formControlName="Departure"><br><br>
+
+<div class="form-control" *ngIf="!hotelbool">
+<label>Type:</label>
+<select formControlName="revType">
+  <option value="Type" ></option>
+  <option value="luxury Suit">Luxury Suit</option>
+  <option value="Suit">Suit</option>
+  <option value="Economy">Economy</option>
+  <option value="Double">Double</option>
+</select><br><br>
+</div><br>
+
+<div class="form-control" *ngIf="hotelbool">
+<label>Type</label>
+<input formControlName="revType" type="text" placeholder="Type" readonly [(ngModel)]="calculatedtype()">
+</div><br>
+
+<div class="form-control" *ngIf="!hotelbool">
+<label>Guests:</label>
+<input type="number" placeholder="Guests" formControlName="Guests"><br><br>
+</div>
+
+<div class="form-control" *ngIf="hotelbool">
+<label>Guests:</label>
+<input type="number" placeholder="Guests" formControlName="Guests" [(ngModel)]="Guests" (keyup)="getguests()"><br><br>
+</div>
+
+<div class="form-control" *ngIf="!hotelbool">
+<label>Price:</label>
+<input type="number" placeholder="price in rs" formControlName="Price"><br><br>
+</div>
+
+<div class="form-control" *ngIf="hotelbool">
+  <label>Price:</label>
+  <input type="number" placeholder="price in rs" formControlName="Price" readonly value="calculateprice()"><br><br>
+  </div>
+
+
+<div >
+<button (click)="addList()" class="btn btn-active">Submit</button>|
+
+<button type="reset" (click)="clear()">Clear</button>
+</div>
+</form> -->
+   
+  
+
+
+
+
+
+
+
+
+  
+  <!-- <div >
+     <button class="close" (click)="closeedit()">X</button>
+  
+   <form [formGroup]="registrationform" >
+     
+      <div class="form-group">
+  <br><br>
+    <label for="Slno">Slno: </label>
+    <input type="number" placeholder="Slno" class="form-control">
+  
+  </div>
+  <br><br>
+  <div class="form-group">
+  
+  
+    <label for="Hotel">Hotel: </label>
+    <input type="text" placeholder="Hotel" class="form-control">
+  </div>
+    <br><br>
+    <div class="form-group">
+  
+    <label for="Arrival">Arrival: </label>
+    <input type="Date" class="form-control">
+  
+    </div>
+    
+    <br><br>
+    <div class="form-group" >
+  
+    <label for="Departure">Departure: </label>
+    <input type="Date" placeholder="dt/mm/yyyy" class="form-control">
+    </div>
+    <br><br>
+    <div class="form-group">
+  
+    <label for="Type">Type:</label>
+  
+  <select name="car" id="cars">
+    <option >Luxuary Suite</option>
+    <option >Suite</option>
+    <option >Double</option>
+    <option >Economy</option>
+  </select>
+  </div>
+  <br><br>
+  <div class="form-group">
+  
+    <label for="Guests">Guests: </label>
+    <input type="number" placeholder="Guests" class="form-control">
+  </div>
+    <br><br>
+  <div class="form-group">
+    <label for="price">Price: </label>
+    <input type="number" placeholder="Price" class="form-control">
+    </div>
+  
+    <button (click)="save()">save</button>|
+  
+    <button class="reset"  (click)="resetEdit()">Reset</button>
+  
+  </form>
+  </div>
+ -->
