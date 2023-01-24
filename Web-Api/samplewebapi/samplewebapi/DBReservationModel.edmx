@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="sampleModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MasterTable">
+          <Key>
+            <PropertyRef Name="hotelId" />
+          </Key>
+          <Property Name="hotelId" Type="int" Nullable="false" />
+          <Property Name="Hotel" Type="varchar" MaxLength="50" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="Guests" Type="int" />
+          <Property Name="Price" Type="money" />
+        </EntityType>
+        <EntityType Name="Reservation">
+          <Key>
+            <PropertyRef Name="Slno" />
+          </Key>
+          <Property Name="Slno" Type="int" Nullable="false" />
+          <Property Name="Hotel" Type="varchar" MaxLength="50" />
+          <Property Name="Arrival" Type="date" />
+          <Property Name="Departure" Type="date" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="Guests" Type="int" />
+          <Property Name="Price" Type="money" />
+        </EntityType>
+        <EntityContainer Name="sampleModel2StoreContainer">
+          <EntitySet Name="MasterTable" EntityType="Self.MasterTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sampleModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Reservation">
+          <Key>
+            <PropertyRef Name="Slno" />
+          </Key>
+          <Property Name="Slno" Type="Int32" Nullable="false" />
+          <Property Name="Hotel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Arrival" Type="DateTime" Precision="0" />
+          <Property Name="Departure" Type="DateTime" Precision="0" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Guests" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityContainer Name="sampleEntities8" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Reservations" EntityType="Self.Reservation" />
+          <EntitySet Name="MasterTables" EntityType="sampleModel2.MasterTable" />
+        </EntityContainer>
+        <EntityType Name="MasterTable">
+          <Key>
+            <PropertyRef Name="hotelId" />
+          </Key>
+          <Property Name="hotelId" Type="Int32" Nullable="false" />
+          <Property Name="Hotel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Guests" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sampleModel2StoreContainer" CdmEntityContainer="sampleEntities8">
+          <EntitySetMapping Name="Reservations">
+            <EntityTypeMapping TypeName="sampleModel2.Reservation">
+              <MappingFragment StoreEntitySet="Reservation">
+                <ScalarProperty Name="Slno" ColumnName="Slno" />
+                <ScalarProperty Name="Hotel" ColumnName="Hotel" />
+                <ScalarProperty Name="Arrival" ColumnName="Arrival" />
+                <ScalarProperty Name="Departure" ColumnName="Departure" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Guests" ColumnName="Guests" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MasterTables">
+            <EntityTypeMapping TypeName="sampleModel2.MasterTable">
+              <MappingFragment StoreEntitySet="MasterTable">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Guests" ColumnName="Guests" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Hotel" ColumnName="Hotel" />
+                <ScalarProperty Name="hotelId" ColumnName="hotelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sampleModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'sample.dbo.Reservations' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Reservations">
+          <Property Name="Hotel" Type="varchar" MaxLength="50" />
+          <Property Name="Arrival" Type="date" />
+          <Property Name="Departure" Type="date" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+          <Property Name="Guests" Type="int" />
+          <Property Name="Price" Type="money" />
+        </EntityType>-->
+  <EntityType Name="studentTable">
+    <Key>
+      <PropertyRef Name="rollno" />
+    </Key>
+    <Property Name="firstName" Type="varchar" MaxLength="50" />
+    <Property Name="lastName" Type="varchar" MaxLength="50" />
+    <Property Name="rollno" Type="int" Nullable="false" />
+    <Property Name="branch" Type="varchar" MaxLength="50" />
+    <Property Name="marks" Type="int" />
+  </EntityType>
+  <Function Name="sp_employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fname" Type="varchar" Mode="In" />
+    <Parameter Name="lname" Type="varchar" Mode="In" />
+    <Parameter Name="rollno" Type="int" Mode="In" />
+    <Parameter Name="branch" Type="varchar" Mode="In" />
+    <Parameter Name="marks" Type="int" Mode="In" />
+    <Parameter Name="type" Type="char" Mode="In" />
+  </Function>
+  <EntityContainer Name="sampleModel1StoreContainer">
+    <EntitySet Name="studentTable" EntityType="Self.studentTable" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sampleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="EmployeeProject">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Teamleader" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfJoining" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Pproject">
+    <Key>
+      <PropertyRef Name="TeamLeader" />
+    </Key>
+    <Property Name="startDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TeamLeader" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="projectName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Teamsize" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="sampleEntities6" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EmployeeProjects" EntityType="Self.EmployeeProject" />
+    <EntitySet Name="Pprojects" EntityType="Self.Pproject" />
+  </EntityContainer>
+</Schema>

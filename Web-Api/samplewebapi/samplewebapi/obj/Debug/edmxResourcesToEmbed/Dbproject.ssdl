@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sampleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="EmployeeProject">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="Teamleader" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfJoining" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Pproject">
+    <Key>
+      <PropertyRef Name="TeamLeader" />
+    </Key>
+    <Property Name="startDate" Type="nchar" MaxLength="10" />
+    <Property Name="TeamLeader" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="projectName" Type="nchar" MaxLength="10" />
+    <Property Name="Teamsize" Type="int" />
+  </EntityType>
+  <Function Name="sp_employee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Fname" Type="varchar" Mode="In" />
+    <Parameter Name="lname" Type="varchar" Mode="In" />
+    <Parameter Name="rollno" Type="int" Mode="In" />
+    <Parameter Name="branch" Type="varchar" Mode="In" />
+    <Parameter Name="marks" Type="int" Mode="In" />
+    <Parameter Name="type" Type="char" Mode="In" />
+  </Function>
+  <EntityContainer Name="sampleModelStoreContainer">
+    <EntitySet Name="EmployeeProject" EntityType="Self.EmployeeProject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pproject" EntityType="Self.Pproject" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

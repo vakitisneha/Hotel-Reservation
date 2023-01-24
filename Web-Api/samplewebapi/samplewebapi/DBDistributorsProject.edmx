@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="webSalesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="address">
+          <Key>
+            <PropertyRef Name="MobileNumber" />
+          </Key>
+          <Property Name="FullName" Type="varchar" MaxLength="50" />
+          <Property Name="MobileNumber" Type="bigint" Nullable="false" />
+          <Property Name="PinCode" Type="bigint" />
+          <Property Name="FlatNO" Type="varchar" MaxLength="100" />
+          <Property Name="BuildingName" Type="varchar" MaxLength="50" />
+          <Property Name="Street" Type="varchar" MaxLength="100" />
+          <Property Name="Village" Type="varchar" MaxLength="100" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+          <Property Name="states" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="prodId" />
+          </Key>
+          <Property Name="prodId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="prodName" Type="varchar" MaxLength="1000" />
+          <Property Name="prodimage" Type="varchar" MaxLength="1000" />
+          <Property Name="prodDescription" Type="varchar" MaxLength="1000" />
+          <Property Name="prodprice" Type="money" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="total" Type="int" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="AccountNO" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="1000" />
+          <Property Name="AccountNO" Type="bigint" Nullable="false" />
+          <Property Name="CVV" Type="bigint" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="productName" Type="varchar" MaxLength="1000" />
+          <Property Name="ProductId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="image" Type="varchar" MaxLength="1000" />
+          <Property Name="price" Type="money" />
+          <Property Name="Description" Type="varchar" MaxLength="1000" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="Total" Type="int" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="BankAccountNo" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="1000" />
+          <Property Name="Username" Type="varchar" MaxLength="1000" />
+          <Property Name="Dob" Type="date" />
+          <Property Name="ContactNO" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="1000" />
+          <Property Name="PANNo" Type="int" />
+          <Property Name="BankIFCSCode" Type="int" />
+          <Property Name="BankAccountNo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="BankAccountNo" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="1000" />
+          <Property Name="Username" Type="varchar" MaxLength="1000" />
+          <Property Name="Password" Type="varchar" MaxLength="1000" />
+          <Property Name="ConfirmPassword" Type="varchar" MaxLength="1000" />
+          <Property Name="Dob" Type="date" />
+          <Property Name="ContactNO" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="1000" />
+          <Property Name="PANNo" Type="int" />
+          <Property Name="BankIFCSCode" Type="int" />
+          <Property Name="BankAccountNo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="webSalesModelStoreContainer">
+          <EntitySet Name="address" EntityType="Self.address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="webSalesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="webSalesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Carts" EntityType="webSalesModel.Cart" />
+          <EntitySet Name="addresses" EntityType="webSalesModel.address" />
+          <EntitySet Name="Payments" EntityType="webSalesModel.Payment" />
+          <EntitySet Name="Products" EntityType="webSalesModel.Product" />
+          <EntitySet Name="Profiles" EntityType="webSalesModel.Profile" />
+          <EntitySet Name="Registrations" EntityType="webSalesModel.Registration" />
+        </EntityContainer>
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="prodId" />
+          </Key>
+          <Property Name="prodId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prodName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="prodimage" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="prodDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="prodprice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="total" Type="Int32" />
+        </EntityType>
+        <EntityType Name="address">
+          <Key>
+            <PropertyRef Name="MobileNumber" />
+          </Key>
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNumber" Type="Int64" Nullable="false" />
+          <Property Name="PinCode" Type="Int64" />
+          <Property Name="FlatNO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BuildingName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Street" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Village" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="states" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="AccountNO" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="AccountNO" Type="Int64" Nullable="false" />
+          <Property Name="CVV" Type="Int64" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="productName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ProductId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Total" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="BankAccountNo" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Dob" Type="DateTime" Precision="0" />
+          <Property Name="ContactNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="PANNo" Type="Int32" />
+          <Property Name="BankIFCSCode" Type="Int32" />
+          <Property Name="BankAccountNo" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="BankAccountNo" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ConfirmPassword" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Dob" Type="DateTime" Precision="0" />
+          <Property Name="ContactNO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="PANNo" Type="Int32" />
+          <Property Name="BankIFCSCode" Type="Int32" />
+          <Property Name="BankAccountNo" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="webSalesModelStoreContainer" CdmEntityContainer="webSalesEntities">
+          <EntitySetMapping Name="Carts">
+            <EntityTypeMapping TypeName="webSalesModel.Cart">
+              <MappingFragment StoreEntitySet="Cart">
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="prodprice" ColumnName="prodprice" />
+                <ScalarProperty Name="prodDescription" ColumnName="prodDescription" />
+                <ScalarProperty Name="prodimage" ColumnName="prodimage" />
+                <ScalarProperty Name="prodName" ColumnName="prodName" />
+                <ScalarProperty Name="prodId" ColumnName="prodId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="addresses">
+            <EntityTypeMapping TypeName="webSalesModel.address">
+              <MappingFragment StoreEntitySet="address">
+                <ScalarProperty Name="states" ColumnName="states" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Village" ColumnName="Village" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="BuildingName" ColumnName="BuildingName" />
+                <ScalarProperty Name="FlatNO" ColumnName="FlatNO" />
+                <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="webSalesModel.Payment">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="CVV" ColumnName="CVV" />
+                <ScalarProperty Name="AccountNO" ColumnName="AccountNO" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="webSalesModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="productName" ColumnName="productName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profiles">
+            <EntityTypeMapping TypeName="webSalesModel.Profile">
+              <MappingFragment StoreEntitySet="Profile">
+                <ScalarProperty Name="BankAccountNo" ColumnName="BankAccountNo" />
+                <ScalarProperty Name="BankIFCSCode" ColumnName="BankIFCSCode" />
+                <ScalarProperty Name="PANNo" ColumnName="PANNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactNO" ColumnName="ContactNO" />
+                <ScalarProperty Name="Dob" ColumnName="Dob" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registrations">
+            <EntityTypeMapping TypeName="webSalesModel.Registration">
+              <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="BankAccountNo" ColumnName="BankAccountNo" />
+                <ScalarProperty Name="BankIFCSCode" ColumnName="BankIFCSCode" />
+                <ScalarProperty Name="PANNo" ColumnName="PANNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactNO" ColumnName="ContactNO" />
+                <ScalarProperty Name="Dob" ColumnName="Dob" />
+                <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

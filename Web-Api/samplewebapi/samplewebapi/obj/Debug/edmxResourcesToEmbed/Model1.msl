@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sampleModel1StoreContainer" CdmEntityContainer="sampleEntities3">
+    <EntitySetMapping Name="studentTables">
+      <EntityTypeMapping TypeName="sampleModel1.studentTable">
+        <MappingFragment StoreEntitySet="studentTable">
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="rollno" ColumnName="rollno" />
+          <ScalarProperty Name="branch" ColumnName="branch" />
+          <ScalarProperty Name="marks" ColumnName="marks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_employee" FunctionName="sampleModel1.Store.sp_employee" />
+    <FunctionImportMapping FunctionImportName="sp_employeeFunction" FunctionName="sampleModel1.Store.sp_employee" />
+  </EntityContainerMapping>
+</Mapping>

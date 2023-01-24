@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sampleModelStoreContainer" CdmEntityContainer="sampleEntities6">
+    <EntitySetMapping Name="EmployeeProjects">
+      <EntityTypeMapping TypeName="sampleModel.EmployeeProject">
+        <MappingFragment StoreEntitySet="EmployeeProject">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Teamleader" ColumnName="Teamleader" />
+          <ScalarProperty Name="DateOfJoining" ColumnName="DateOfJoining" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pprojects">
+      <EntityTypeMapping TypeName="sampleModel.Pproject">
+        <MappingFragment StoreEntitySet="Pproject">
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="TeamLeader" ColumnName="TeamLeader" />
+          <ScalarProperty Name="projectName" ColumnName="projectName" />
+          <ScalarProperty Name="Teamsize" ColumnName="Teamsize" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
