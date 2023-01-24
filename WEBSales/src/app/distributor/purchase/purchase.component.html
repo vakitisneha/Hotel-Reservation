@@ -1,0 +1,65 @@
+<p>purchase works!</p>
+
+<!-- <ng-container *ngIf="true"> -->
+    <ng-container *ngIf="product.length !=0">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table-responsive">
+                    <thead class="thead">
+                    <tr>
+                        <th>no of products</th>
+                        <th>productId</th>
+                        <th>productName</th>
+                        <th>Image</th>
+                        <th>price</th>
+                        <th>Description</th>
+                        <th>quantity</th>
+                        <th>total</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of product;let i=index">
+                            <td>{{i+1}}</td>
+                            <td >{{item.ProductId}}</td>
+                            <td>{{item.productName}}</td>
+                            <td><img class="img" src="{{item.image}}" alt=""></td>
+                            <td >{{item.price}}</td>
+                            <td class="description">{{item.Description}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.total}}</td>
+                            <td>
+                                <button (click)="removeitem(item)" class="btn btn-primary">Delete</button>
+                            </td>
+                          
+                        </tr>
+                        <!-- <tr>
+                           
+                            <td><button (click)="purchasemore()" class="btn btn-info">purchase more</button></td>  
+                            <td><button  (click)="payment()" class="btn btn-success">Place Order</button></td>
+                            <td><strong>Grand total:{{grandTotal}}</strong></td>
+                            
+                        </tr> -->
+                    </tbody>
+                    
+                </table>
+                <button  (click)="purchasemore()" class="btn btn-info">Purchase More</button>  
+                <button  (click)="payment()" class="btn btn-success" >Place Order</button>
+                <strong>Grand Total:{{grandTotal}}</strong>
+            </div>
+        </div>
+    </ng-container>
+    <!-- <ng-container *ngIf="false">  -->
+        <ng-container *ngIf="product.length==0"> 
+    <div class="container">`    
+        <div class="cart">
+            <h1 class="cart-title">MyCart</h1>
+        </div>
+        <div class="center">
+            <img src="https://th.bing.com/th/id/OIP.r6aijQ7gtefVW3pa7N_t7AHaFQ?pid=ImgDet&rs=1" alt="">
+           
+            <h6>add item to it now</h6>
+            <button class="btn-btn-primary" (click)="shopnow()">Shop Now</button>
+        </div>
+    </div> 
+    

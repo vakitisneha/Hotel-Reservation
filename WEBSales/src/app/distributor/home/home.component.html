@@ -1,0 +1,187 @@
+<app-header></app-header>
+
+<div class="product-list-wrapper">
+    <h1>PRODUCTS</h1>
+    <ng-container *ngFor="let item of products">
+        <div class="col-xs-4">      
+            <div class="product-item ">
+                <img src="{{item.image}}" alt="">
+            </div>
+            <div class="product-details">
+                    <h6 class="name-head">{{item.productName}}</h6>
+                     <h6 class="name-head">{{item.productId}}</h6>
+                <div class="product-price">
+                    <h4>Price:{{item.price}}</h4>
+                </div>
+            <div class="product-description">
+                <h4>{{item.Description}}</h4>
+            </div>
+            </div>
+       
+        <div class="product-footer">
+            <!-- <button class="btn btn-primary">View Details</button> -->
+             <button class="btn btn-primary" (click)="addcart(item)">Add To Cart</button> 
+             <button class="btn btn-primary" (click)="addtocart(item)">Buy</button>
+         </div>
+        </div>
+    </ng-container>
+</div>
+    <!-- <div class="col-sm-3">      
+        <div class="product-item">
+            <img src="https://n2.sdlcdn.com/imgs/a/n/l/Apple-iPhone-6-16-GB-SDL797492205-1-dab61.jpg" alt="">
+        </div>
+        <div class="product-details">
+            <h6 class="name-head">New Apple Mobile</h6>
+            <div class="product-price">
+                <h4>Price:$1000</h4>
+            </div>
+            <div class="product-color">
+                <h4>price:blue</h4>
+            </div>
+        </div>
+        <div class="product-footer">
+           <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-primary">Add To Cart</button>
+        </div>
+    </div>
+    <div class="col-sm-3">      
+        <div class="product-item">
+            <img src="https://www.bhphotovideo.com/images/images2500x2500/hp_5yh29ua_aba_pavilion_laptop_15_cs2010nr_core_1473122.jpg" alt="">
+        </div>
+        <div class="product-details">
+            <h6 class="name-head">New Apple Mobile</h6>
+            <div class="product-price">
+                <h4>Price:$1000</h4>
+            </div>
+            <div class="product-color">
+                <h4>price:blue</h4>
+            </div>
+        </div>
+        <div class="product-footer">
+           <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-primary">Add To Cart</button>
+        </div>
+    </div>
+    <div class="col-sm-3">      
+        <div class="product-item">
+            <img src="https://n2.sdlcdn.com/imgs/a/n/l/Apple-iPhone-6-16-GB-SDL797492205-1-dab61.jpg" alt="">
+        </div>
+        <div class="product-details">
+            <h6 class="name-head">New Apple Mobile</h6>
+            <div class="product-price">
+                <h4>Price:$1000</h4>
+            </div>
+            <div class="product-color">
+                <h4>price:blue</h4>
+            </div>
+        </div>
+        <div class="product-footer">
+           <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-primary">Add To Cart</button>
+        </div>
+    </div><div class="col-sm-3">      
+        <div class="product-item">
+            <img src="https://n2.sdlcdn.com/imgs/a/n/l/Apple-iPhone-6-16-GB-SDL797492205-1-dab61.jpg" alt="">
+        </div>
+        <div class="product-details">
+            <h6 class="name-head">New Apple Mobile</h6>
+            <div class="product-price">
+                <h4>Price:$1000</h4>
+            </div>
+            <div class="product-color">
+                <h4>price:blue</h4>
+            </div>
+        </div>
+        <div class="product-footer">
+           <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-primary">Add To Cart</button>
+        </div>
+    </div><div class="col-sm-3">      
+        <div class="product-item">
+            <img src="https://n2.sdlcdn.com/imgs/a/n/l/Apple-iPhone-6-16-GB-SDL797492205-1-dab61.jpg" alt="">
+        </div>
+        <div class="product-details">
+            <h6 class="name-head">New Apple Mobile</h6>
+            <div class="product-price">
+                <h4>Price:$1000</h4>
+            </div>
+            <div class="product-color">
+                <h4>price:blue</h4>
+            </div>
+        </div>
+        <div class="product-footer">
+           <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-primary">Add To Cart</button>
+        </div>
+    </div><div class="col-sm-3">      
+        <div class="product-item">
+            <img src="https://n2.sdlcdn.com/imgs/a/n/l/Apple-iPhone-6-16-GB-SDL797492205-1-dab61.jpg" alt="">
+        </div>
+        <div class="product-details">
+            <h6 class="name-head">New Apple Mobile</h6>
+            <div class="product-price">
+                <h4>Price:$1000</h4>
+            </div>
+            <div class="product-color">
+                <h4>price:blue</h4>
+            </div>
+        </div>
+        <div class="product-footer">
+           <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-primary">Add To Cart</button>
+        </div>
+    </div><div class="col-sm-3">      
+        <div class="product-item">
+            <img src="https://n2.sdlcdn.com/imgs/a/n/l/Apple-iPhone-6-16-GB-SDL797492205-1-dab61.jpg" alt="">
+        </div>
+        <div class="product-details">
+            <h6 class="name-head">New Apple Mobile</h6>
+            <div class="product-price">
+                <h4>Price:$1000</h4>
+            </div>
+            <div class="product-color">
+                <h4>price:blue</h4>
+            </div>
+        </div>
+        <div class="product-footer">
+           <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-primary">Add To Cart</button>
+        </div>
+    </div><div class="col-sm-3">      
+        <div class="product-item">
+            <img src="https://n2.sdlcdn.com/imgs/a/n/l/Apple-iPhone-6-16-GB-SDL797492205-1-dab61.jpg" alt="">
+        </div>
+        <div class="product-details">
+            <h6 class="name-head">New Apple Mobile</h6>
+            <div class="product-price">
+                <h4>Price:$1000</h4>
+            </div>
+            <div class="product-color">
+                <h4>price:blue</h4>
+            </div>
+        </div>
+        <div class="product-footer">
+           <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-primary">Add To Cart</button>
+        </div>
+    </div><div class="col-sm-3">      
+        <div class="product-item">
+            <img src="https://n2.sdlcdn.com/imgs/a/n/l/Apple-iPhone-6-16-GB-SDL797492205-1-dab61.jpg" alt="">
+        </div>
+        <div class="product-details">
+            <h6 class="name-head">New Apple Mobile</h6>
+            <div class="product-price">
+                <h4>Price:$1000</h4>
+            </div>
+            <div class="product-color">
+                <h4>price:blue</h4>
+            </div>
+        </div>
+        <div class="product-footer">
+           <button class="btn btn-primary">View Details</button>
+            <button class="btn btn-primary" >Add To Cart</button>
+            
+        </div>
+    </div>
+
+</div>  -->

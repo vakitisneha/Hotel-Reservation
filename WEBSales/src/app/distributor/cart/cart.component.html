@@ -1,0 +1,63 @@
+<!-- <ng-container *ngIf="true">  -->
+    <ng-container *ngIf="product.length !=0">
+    <div class="card-table">
+        <div class="cart-product">
+            <table class="table-responsive">
+                <thead>
+                <tr>
+                    <th>productId</th>
+                    <th>productName</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>price</th>
+                    <th>quantity</th>
+                    <th>total</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of product;let i=index">
+                        <td>{{i+1}}</td>
+                        <td>{{item.productId}}</td>
+                        <td>{{item.ProductName}}</td>
+                        <td><img src="{{item.image}}" alt=""></td>
+                        <td>{{item.Description}}</td>
+                        <td>{{item.price}}&emsp;</td>
+                        <td>{{item.quantity}}&emsp;</td>
+                        <td>{{item.total}}</td>
+
+                        <h4>{{item.Quantity}}</h4>
+                        <h4>{{item.Total}}</h4>
+                        <td>
+                            <button  class="btn btn-primary">Delete</button>
+                        </td>
+                        <!-- <td>
+                            <button (click)="removeitem(item)" class="btn btn-primary">Delete</button>
+                        </td> -->
+                    </tr>
+                    <tr>
+                        <!-- <td><button>EmptyCart</button></td>
+                        <td><button>show more</button></td>  
+                        <td><button>checkout</button></td> -->
+                        <td><strong>Grand total:{{grandTotal}}</strong></td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</ng-container>
+<!-- <ng-container *ngIf="false">  -->
+  <ng-container *ngIf="product.length==0"> 
+<div class="container">
+    <div class="cart">
+        <h1 class="cart-title">MyCart</h1>
+    </div>
+    <div class="center">
+        <img src="https://th.bing.com/th/id/OIP.r6aijQ7gtefVW3pa7N_t7AHaFQ?pid=ImgDet&rs=1" alt="">
+       
+        <h6>add item to it now</h6>
+        <button class="btn-btn-primary" (click)="shopnow()">shop Now</button>
+    </div>
+</div> 

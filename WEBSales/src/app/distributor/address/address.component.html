@@ -1,0 +1,82 @@
+<form [formGroup]="reserveForm" (ngSubmit)="onFormSubmit()">
+  <div>
+  <label>Full Name</label>
+  <input type="text" placeholder="enter your full name" formControlName="FullName"><br><br>
+  
+  <label>Mobile Number</label>
+  <input type="number" placeholder="Guests" formControlName="MobileNumber"><br><br>
+
+  <label>PinCode</label>
+  <input type="number" placeholder="price" formControlName="PinCode"><br><br>
+
+  <label>FlatNo</label>
+  <input type="text" placeholder="enter your flat no" formControlName="FlatNo"><br><br>
+
+  <label>Building Name</label>
+  <input type="text" placeholder="enter your building name" formControlName="BuildingName"><br><br>
+
+  <label>Street</label>
+  <input type="text" placeholder="enter your street name" formControlName="Street"><br><br>
+
+  <label>Village</label>
+  <input type="text" placeholder="enter your village name" formControlName="Village"><br><br>
+  
+  <label>City</label>
+  <input type="text" placeholder="enter your city name" formControlName="city"><br><br>
+
+  <select formControlName="states">
+    <option value="states" ></option>
+    <option value="telangana">Telangana</option>
+    <option value="ap">Ap</option>
+    <option value="maharastra">maharastra</option>
+    <option value="karnataka">Karnataka</option>
+    <option value="TamilNadu">TamilNadu</option>
+  </select><br><br>
+  </div>
+  <div >
+ 
+  
+<button (click)="saveaddress()" class="btn btn-active">Save</button>
+
+  </div>
+  </form>
+
+
+
+
+
+ 
+<!-- 
+<form [formGroup]="reserveForm" (ngSubmit)="onFormSubmit()" >
+<div >
+<label for="name">Full Name</label>
+<input type="text" placeholder="enter your full name"  formControlName="fullname"><br>
+
+<label for="number">Mobile Number</label>
+<input type="mobile" placeholder="0000000000"  formControlName="mobilenumber"><br>
+
+<label for="pincode">PinCode</label>
+<input type="pincode" placeholder="000000"   formControlName="pincode"><br>
+
+<label for="text">FlatNo</label>
+<input type="text"  formControlName="flatno"><br>
+
+<label for="text">Building Name</label>
+<input type="text"  formControlName="building"><br>
+
+<label for="text">Street</label>
+<input type="text"  formControlName="street"><br>
+
+<label for="text">Village</label>
+<input type="text"  formControlName="village"><br>
+
+<label for="text">City</label>
+<input type="text" placeholder="city" ><br>
+
+
+<label for="states">States</label>
+<input type="text" placeholder="enter your state">
+
+<button (click)="saveaddress()">Save</button>
+</div>
+</form>  -->

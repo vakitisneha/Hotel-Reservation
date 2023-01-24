@@ -1,0 +1,80 @@
+<p>checkout works!</p>
+
+<h2>Select  Delivery Address</h2>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Mobile Number</th>
+        <th>PinCode</th>
+        <th>FlatNo</th>
+        <th>Building Name</th>
+        <th>Street</th>
+        <th>Village</th>
+        <th>City</th>
+        <th>states</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let items of address">
+        <td>  <input class="form-check-input" type="radio" name="flexRadio" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            {{items.FullName}} </label> </td>
+       
+        <td>{{items.MobileNumber}}</td>
+        <td>{{items.PinCode}}</td>
+        <td>{{items.FlatNO}}</td>
+        <td>{{items.BuildingName}}</td>
+        <td>{{items.Street}}</td>
+        <td>{{items.Village}}</td>
+        <td>{{items.City}}</td>
+        <td>{{items.states}}</td>
+        <td><button class="btn-btn-success" (click)="openEdit(items)">Edit</button>|
+          <button class="btn-btn-success">Delete</button>
+        </td>
+       
+      </tr>
+    </tbody>
+</table> 
+
+<button (click)="openaddress()">Add address</button><br><br>
+
+<button (click)="continue()">Continue</button>
+
+<!-- 
+<h2>Select Payment Method</h2>
+
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Bank Payment
+  </label><br>
+  
+  <button (click)="bankDetails()">AddBankdetails</button>
+
+  <table class="table">
+    <thead>
+      <tr>
+      <th>AccountHolderName</th>
+      <th>AccountNumber</th>
+      <th>CVV</th>
+      <th>Action</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr *ngFor="let items of bankdetails">
+        <td>{{items.AccountHolderName}}</td>
+        <td>{{items.AccountNumber}}</td>
+        <td>{{items.CVV}}</td>
+        <td>
+          <button class="btn-btn-success" >Continue</button>
+        </td>
+       
+      </tr>
+    </tbody>
+  </table>
+<button (click)="continue()">Continue</button> -->

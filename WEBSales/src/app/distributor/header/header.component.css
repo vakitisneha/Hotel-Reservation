@@ -1,0 +1,31 @@
+.nav-bar{
+background: black;
+height:50px;
+}
+.search{
+    margin-left: 100px;
+    margin-top: 7px;
+    height: 35px;
+    width:350px;
+}
+.profiles{
+margin-left:700px;
+margin-top: -25px;
+}
+.bi-search{
+margin-left:-25px;
+}
+.profiles a{
+    color:#fff;
+    text-decoration: none;
+}
+.image{
+    height:30px;
+    width:30px;
+    margin-left:40px
+}
+button{
+   margin-right: 20px;
+    margin-left:20px
+
+}
